@@ -1,0 +1,40 @@
+.search-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.rate-range-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.rate-range-controls {
+    display: flex;
+    align-items: center;
+}
+
+.rate-range-buttons {
+    margin-right: 10px;
+}
+
+.clear-filter-button {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 10px;
+}
+
+.column-header {
+    display: flex;
+    align-items: center;
+}
+
+.column-header input {
+    margin-left: 10px;
+}
+
+.sort-icon {
+    margin-left: 5px;
+    margin-right: 5px;
+}

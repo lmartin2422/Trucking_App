@@ -1,0 +1,67 @@
+<div class="search-container">
+    <input type="text"
+           [(ngModel)]="searchValue"
+           placeholder="Search"
+           (input)="search()" /> &nbsp;
+    <button class="btn btn-secondary" (click)="clearSearch()">Clear</button>
+</div>
+<div class="rate-range-container" *ngIf="enableRateRange">
+    <div class="rate-range-controls">
+        <label>Rate Range: &nbsp;</label>
+        <input type="number" [(ngModel)]="minRate" placeholder="Min" step="10" />
+        <span> &nbsp; -&nbsp; </span>
+        <input type="number" [(ngModel)]="maxRate" placeholder="Max" step="10" />&nbsp;
+    </div>
+    <div class="rate-range-buttons">
+        <button class="btn btn-primary" (click)="applyFilter()">Apply</button>&nbsp;
+        <button class="btn btn-secondary" (click)="clearRateRange()">Clear</button>
+    </div>
+</div>
+
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th *ngFor="let column of tableColumns">
+                    <div class="column-header">
+                        {{ column }}
+                        <input type="text"
+                               placeholder="Search {{ column }}"
+                               [(ngModel)]="columnFilters[column]"
+                               (input)="applyFilter()"
+                               (click)="$event.stopPropagation()">
+                        <span class="sort-icon"
+                               *ngIf="isColumnSortable(column)"
+                               [ngClass]="getSortIconClass(column)"
+                               (click)="sortTable(column)"></span>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let item of filteredData">
+                <tr (click)="toggleRowExpand(item)">
+                    <td *ngFor="let column of tableColumns">
+                        <div *ngIf="column === 'Carrier' ">
+                            <a [routerLink]="['/carrier-management', item.Carrier]">{{ item[column] }}</a>
+                        </div>
+                        <div *ngIf="!item.isExpanded && column !== 'Carrier' ">{{ item[column] }}</div>
+                        <div *ngIf="item.isExpanded && column !== 'Carrier' ">{{ item[column] }}</div>
+                    </td>
+                </tr>
+                <tr *ngIf="item.isExpanded">
+                    <td [attr.colspan]="tableColumns.length">
+                        <div class="expanded-content">
+                            <p>{{ getCarrierBlurb(item.Carrier) }}</p>
+                        </div>
+                    </td>
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>
+
+<div class="clear-filters-button">
+    <button class="btn btn-secondary" (click)="clearFilters()">Clear Filters</button>
+</div>
