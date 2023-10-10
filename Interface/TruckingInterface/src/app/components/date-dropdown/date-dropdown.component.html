@@ -1,1 +1,10 @@
-<p>date-dropdown works!</p>
+<mat-form-field>
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [rangePicker]="picker">
+        <input matStartDate placeholder="Start Date">
+        <input matEndDate placeholder="End Date">
+    </mat-date-range-input>
+    <mat-hint>MM/DD/YY - MM/DD/YY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field>
