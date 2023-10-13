@@ -5,6 +5,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';  // first install "npm install @angular/material @angular/cdk"
 import { MatFormFieldModule } from '@angular/material/form-field'; 
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -42,6 +44,7 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatFormFieldModule,
     MatDatepickerModule,
+    MatDialogModule,
 
   ],
   providers: [],
