@@ -1,1 +1,13 @@
-<p>nav-bar works!</p>
+<ul>
+    <li><a routerLink="/dashboard" routerLink="active">Dashboard</a></li>
+    <li><a routerLink="/loadboard" routerLink="active">Loadboard</a></li>
+    <li><a routerLink="/rate-calculator" routerLink="active">Rate Calculator</a></li>
+    <li><a routerLink="/carrier-management" routerLink="active">Carrier Management</a></li>
+    <li>
+        <span *ngIf="profile" class="greeting">Hello {{ profile.givenName }} {{ profile.surname }}</span>
+        <button class="btn-logout" *ngIf="loginDisplay" (click)="logout()">Logout</button>
+        <button class="btn-logout" [attr.href]="switchAccountsUrl" target="_blank">Switch Accounts</button>
+    </li>
+</ul>
+
+<router-outlet *ngIf="!isFrame"></router-outlet>
