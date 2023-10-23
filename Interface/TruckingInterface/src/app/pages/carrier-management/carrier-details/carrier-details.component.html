@@ -1,0 +1,42 @@
+<h1 class="text-center mt-4">{{ carrierName}}</h1>
+<p class="text-center italic"> {{ getCarrierDescription }}</p>
+
+<div class="container">
+    <h3>Profile</h3>
+    <button (click)="toggleEditingProfile()">
+        {{ isEditingProfile ? 'Save' : 'Edit'}}
+    </button>
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let data of profileData">
+                <td class="field-container"> {{ data.name }}</td>
+                <td>
+                    <span [contentEditable]="isEditingProfile" (input)="onInput($event)">
+                        {{ data.value }}
+                    </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+<div class="container">
+    <h3>Accessorial Changes</h3>
+    <button (click)="toggleEditingAccess()">
+        {{ isEditingAccess ? 'Save' : 'Edit'}}
+    </button>
+    <table class="table">
+        <tbody>
+            <tr *ngFor="let charge of accessorialCharges">
+            <td class="field-container"> {{ charge.name }}</td>
+            <td>
+                <span [contentEditable]="isEditingAccess" (input)="onInput($event)">
+                    {{ charge.value }}
+                </span>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

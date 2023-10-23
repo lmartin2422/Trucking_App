@@ -1,1 +1,41 @@
-<p>dashboard works!</p>
+<app-data-table [data]="tableData"></app-data-table>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <link rel="stylesheet" href="dashboard.component.css" />
+
+</head>
+<body>
+
+    <div class="box">
+        <h3>Rate Calculator</h3>
+        <label for="origin">Origin: </label><br>
+        <input type="text" id="origin" name="origin" class="input-field">
+
+        <label for="destination">Destination: </label><br>
+        <input type="text" id="destination" name="destination" class="input-field">
+
+        <label for="equipment">Equipment: &nbsp;</label><br>
+        <input type="text" id="equipment" name="equipment" class="input-field">
+
+        <label for="cargo">Cargo: &nbsp;</label><br>
+        <input type="text" id="cargo" name="cargo" class="input-field">
+
+        <label for="weight">Weight: &nbsp;</label><br>
+        <input type="text" id="weight" name="weight" class="input-field">
+
+        <p></p>
+
+        <button class="button-12" role="button">Calculate</button>
+
+
+    </div>
+    
+</body>
+</html>
+<div class="title-container">
+    <h1 class="title">Dashboard</h1>
+</div>
+<app-data-table [data]="tableData" [enableRateRange]= false></app-data-table>

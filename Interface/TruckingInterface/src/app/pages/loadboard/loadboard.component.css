@@ -1,0 +1,11 @@
+.title-container {
+    text-align: center;
+    border-bottom: 1px solid grey;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.title {
+    margin: 0;
+    font-size: 2rem;
+}

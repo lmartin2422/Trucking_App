@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  tableData = [
+    {'Most Recent': 'USNYC > Queens, NY', 'Rates Received': 7, 'Lowest Rates': 450 }
+  ];
 
 }

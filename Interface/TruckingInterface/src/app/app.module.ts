@@ -22,6 +22,8 @@ import { LocationDialogComponent } from './components/location-dialog/location-d
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 
 import { FormsModule } from '@angular/forms';
+import { CarrierDetailsComponent } from './pages/carrier-management/carrier-details/carrier-details.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { FormsModule } from '@angular/forms';
     DataTableComponent,
     DateDropdownComponent,
     LocationDialogComponent,
-    NavBarComponent
+    NavBarComponent,
+    CarrierDetailsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
